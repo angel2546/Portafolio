@@ -1,3 +1,5 @@
+/** Este codigo ayuda a generar un correo intitucional y su contraseña predeterminada
+
 public class Usuario{
     private String primerNom;
     private String segundoNom;
