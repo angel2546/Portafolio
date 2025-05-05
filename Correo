@@ -1,0 +1,67 @@
+public class Usuario{
+    private String primerNom;
+    private String segundoNom;
+    private String primerApell;
+    private String segundoApell;
+    private int id;
+    private String correo;
+    private String contrasena;
+    private String caracterEsp;
+    private String universidad;
+
+    public Usuario(String primerNom, String segundoNom, String primerApell, 
+    String segundoApell, int id, String caracterEsp, String universidad){
+        this.primerNom = primerNom;
+        this.segundoNom= segundoNom;
+        this.primerApell =primerApell;
+        this.segundoApell = segundoApell;
+        this.id =id;
+        this.caracterEsp = caracterEsp;
+        this.universidad = universidad;
+        
+    }
+
+    public String getPrimernom(){
+        return primerNom;
+    }
+
+    public String getSegundonom(){
+        return segundoNom;
+    }
+
+    public String getPrimerapell(){
+        return primerApell;
+    }
+
+    public String getSegundoapell(){
+        return segundoApell;
+    }
+
+    public int getId(){
+        return id;
+    }
+    
+    private String setCorreo(){
+        String inicial = (primerNom.substring(0,1)+ segundoNom.substring(0,1)
+        +primerApell+segundoApell.substring(0,1)).toLowerCase();
+        String id1= String.valueOf(id);
+        String id2 = id1.substring(id1.length()-2);
+        return inicial+id2+"@"+universidad+".edu.co";
+    }
+       
+    private String setContrasena(){
+        String inicialNombre = (primerNom.substring(1,2)).toUpperCase();
+        String inicialApell = (primerApell.substring(1,2)).toUpperCase();
+        String ultimoDigito1 = String.valueOf(id);
+        String ultimoDigito2 = ultimoDigito1.substring(ultimoDigito1.length()-3);
+        return inicialNombre+inicialApell+ultimoDigito2+caracterEsp;
+    }
+    
+    public void correo(){
+        System.out.println("su correo es " +this.setCorreo());
+    }
+    public void contrasena(){
+        System.out.println("su contraseña es "+this.setContrasena());
+    }
+    
+}
