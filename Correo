@@ -1,4 +1,4 @@
-/** Este codigo ayuda a generar un correo intitucional y su contraseña predeterminada
+/** Este codigo ayuda a generar un correo intitucional y su contraseña predeterminada en java */
 
 public class Usuario{
     private String primerNom;
